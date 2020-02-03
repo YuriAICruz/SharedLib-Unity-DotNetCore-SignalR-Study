@@ -18,7 +18,7 @@ namespace Graphene.SharedModels.ModelView
         public LoginModelView(string userName, string password, bool isPersistent = false)
         {
             UserName = userName;
-            password = password;
+            Password = password;
             IsPersistent = isPersistent;
         }
 

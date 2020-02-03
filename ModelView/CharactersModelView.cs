@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WebServerStudy.Models;
 
 #if UNITY_2018_3_OR_NEWER
 using UnityEngine;
@@ -12,6 +13,13 @@ namespace Graphene.SharedModels.ModelView
         [Required] public string Name;
 
         public float[] Color;
+
+        public CharactersModelView(Character character)
+        {
+            Id = character.Id;
+            Name = character.Name;
+            Color = new []{character.ColorR, character.ColorG, character.ColorB, character.ColorA} ;
+        }
 
 
 #if UNITY_2018_3_OR_NEWER
