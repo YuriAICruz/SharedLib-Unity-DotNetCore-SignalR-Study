@@ -7,5 +7,10 @@ namespace Graphene.SharedModels.ModelView
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        
+        public RegisterModelView(string userName, string email, string password, bool isPersistent = false) : base(userName, password, isPersistent)
+        {
+            Email = email;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using UnityEditor.UIElements;
 
 namespace Graphene.SharedModels.ModelView
 {
@@ -14,5 +15,17 @@ namespace Graphene.SharedModels.ModelView
         [Required]
         [DefaultValue(false)]
         public bool IsPersistent { get; set; }
+        
+        public LoginModelView(string userName, string password, bool isPersistent = false)
+        {
+            UserName = userName;
+            password = password;
+            IsPersistent = isPersistent;
+        }
+
+        public override string ToString()
+        {
+            return $"UserName: {UserName}";
+        }
     }
 }
