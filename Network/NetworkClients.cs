@@ -62,7 +62,7 @@ namespace Graphene.SharedModels.Network
             {
                 _connections.Add(new NetworkClient(userName, new List<string>(){id}));
 
-                i = _connections.Count;
+                i = _connections.Count-1;
             }
             
             return i;
