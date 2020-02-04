@@ -18,6 +18,8 @@ namespace Graphene.SharedModels.Network
         private readonly List<string> connectionId;
 
         private bool _changed;
+        
+        [JsonProperty(TypeNameHandling = TypeNameHandling.None)]
         public ClientStatus Status { get; private set; }
 
         public int SelectedCharacter { get; private set; }
