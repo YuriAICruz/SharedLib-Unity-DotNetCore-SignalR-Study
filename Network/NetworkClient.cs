@@ -1,23 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Graphene.SharedModels.Network
 {
     public class NetworkClient
     {
         public readonly string userName;
+        
+        [JsonProperty(TypeNameHandling=TypeNameHandling.None)]
         private readonly List<string> connectionId;
 
         private bool _changed;
 
         public int SelectedCharacter { get; private set; }
 
+        public NetworkClient()
+        {
+            
+        }
+
         public NetworkClient(string userName, List<string> connectionId)
         {
             this.userName = userName;
             this.connectionId = connectionId;
-        }        
+        }      
         
+        [JsonConstructor]
         public NetworkClient(string userName, List<string> connectionId, int selectedCharacter)
         {
             this.userName = userName;
