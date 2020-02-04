@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 #if !UNITY_2018_3_OR_NEWER
 using WebServerStudy.Models;
 #endif
@@ -9,6 +10,7 @@ using UnityEngine;
 
 namespace Graphene.SharedModels.ModelView
 {
+    [Serializable]
     public class CharactersModelView
     {
         [Required] public int Id;

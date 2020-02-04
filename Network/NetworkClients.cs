@@ -4,8 +4,18 @@ namespace Graphene.SharedModels.Network
 {
     public class NetworkClients
     {
+        private readonly string _userName;
         private List<NetworkClient> _connections = new List<NetworkClient>();
 
+        public NetworkClient Self => _connections[_ownerId];
+
+        private int _ownerId;
+
+        public NetworkClients(string userName)
+        {
+            _userName = userName;
+        }
+        
         public int Count => _connections.Count;
 
         public int FindIndex(string userName)
@@ -32,6 +42,12 @@ namespace Graphene.SharedModels.Network
                 Remove(userName);
         }
 
+
+        public void AddSelf(string userName, string id)
+        {
+            _ownerId = Add(userName, id);
+        }
+        
         public int Add(string userName, string id)
         {
             var i = _connections.FindIndex(x => x.userName == userName);
@@ -51,5 +67,12 @@ namespace Graphene.SharedModels.Network
         }
 
         public NetworkClient this[int i] => _connections[i];
+
+        public void Update(NetworkClient client)
+        {
+            var i = _connections.FindIndex(x => x.userName == client.userName);
+
+            _connections[i] = client;
+        }
     }
 }
