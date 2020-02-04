@@ -11,11 +11,16 @@ namespace Graphene.SharedModels.Network
 
         public bool IsDirty => _changed;
 
-        public int SelectedCharacter { get; private set; }
+        public int SelectedCharacter { get; set; }
 
         public int GetCount()
         {
             return connectionId.Count;
+        }
+
+        public NetworkClient()
+        {
+            
         }
 
         public NetworkClient(string userName, List<string> connectionId)
