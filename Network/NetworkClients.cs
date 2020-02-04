@@ -7,6 +7,8 @@ namespace Graphene.SharedModels.Network
         private readonly string _userName;
         private List<NetworkClient> _connections = new List<NetworkClient>();
 
+        public IReadOnlyList<NetworkClient> Clients => _connections;
+
         public NetworkClient Self => _connections[_ownerId];
 
         private int _ownerId;
