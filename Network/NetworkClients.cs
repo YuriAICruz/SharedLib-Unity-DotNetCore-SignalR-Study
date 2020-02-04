@@ -70,9 +70,7 @@ namespace Graphene.SharedModels.Network
 
         public void Update(NetworkClient client)
         {
-            var i = _connections.FindIndex(x => x.userName == client.userName);
-
-            _connections[i] = client;
+            _connections.Find(x => x.userName == client.userName).Update(client);
         }
     }
 }
