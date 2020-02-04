@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+#if !UNITY_2018_3_OR_NEWER
 using WebServerStudy.Models;
+#endif
 
 #if UNITY_2018_3_OR_NEWER
 using UnityEngine;
@@ -18,12 +20,14 @@ namespace Graphene.SharedModels.ModelView
         {
         }
         
+#if !UNITY_2018_3_OR_NEWER
         public CharactersModelView(Character character)
         {
             Id = character.Id;
             Name = character.Name;
             Color = new []{character.ColorR, character.ColorG, character.ColorB, character.ColorA} ;
         }
+#endif
 
 
 #if UNITY_2018_3_OR_NEWER
