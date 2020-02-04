@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Graphene.SharedModels.Network
 {
     public class NetworkClient
     {
         public readonly string userName;
+        
         private readonly List<string> connectionId;
 
         private bool _changed;
