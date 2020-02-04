@@ -14,6 +14,10 @@ namespace Graphene.SharedModels.ModelView
 
         public float[] Color;
 
+        public CharactersModelView()
+        {
+        }
+        
         public CharactersModelView(Character character)
         {
             Id = character.Id;
