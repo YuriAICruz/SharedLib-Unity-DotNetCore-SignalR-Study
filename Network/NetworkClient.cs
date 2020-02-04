@@ -11,8 +11,7 @@ namespace Graphene.SharedModels.Network
 
         public bool IsDirty => _changed;
 
-        private int _selectedCharacter;
-        public int SelectedCharacter => _selectedCharacter;
+        public int SelectedCharacter { get; private set; }
 
         public int GetCount()
         {
@@ -37,13 +36,13 @@ namespace Graphene.SharedModels.Network
 
         public void SelectCharacter(int id)
         {
-            _selectedCharacter = id;
+            SelectedCharacter = id;
             _changed = true;
         }
 
         public void Update(NetworkClient client)
         {
-            _selectedCharacter = client._selectedCharacter;
+            SelectedCharacter = client.SelectedCharacter;
 
             for (int i = 0; i < client.connectionId.Count; i++)
             {
