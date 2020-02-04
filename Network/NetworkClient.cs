@@ -77,5 +77,10 @@ namespace Graphene.SharedModels.Network
 
             _changed = false;
         }
+        
+        public override string ToString()
+        {
+            return $"user: {userName}, ids: {connectionId.Count}, character: {SelectedCharacter}";
+        }
     }
 }
