@@ -78,6 +78,7 @@ namespace Graphene.SharedModels.Network
         public void Update(NetworkClient client)
         {
             SelectedCharacter = client.SelectedCharacter;
+            Status = client.Status;
 
             for (int i = 0; i < client.connectionId.Count; i++)
             {
