@@ -14,13 +14,16 @@ namespace Graphene.SharedModels.Network
         private int _selectedCharacter;
         public int SelectedCharacter => _selectedCharacter;
 
+        public int GetCount()
+        {
+            return connectionId.Count;
+        }
+
         public NetworkClient(string userName, List<string> connectionId)
         {
             this.userName = userName;
             this.connectionId = connectionId;
         }
-
-        public int Count => connectionId.Count;
 
         public void Remove(string id)
         {
