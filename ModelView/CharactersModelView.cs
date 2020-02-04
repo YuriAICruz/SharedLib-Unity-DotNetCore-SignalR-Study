@@ -18,6 +18,10 @@ namespace Graphene.SharedModels.ModelView
 
         public float[] Color;
 
+        public CharactersModelView()
+        {
+        }
+        
 #if !UNITY_2018_3_OR_NEWER
         public CharactersModelView(Character character)
         {
