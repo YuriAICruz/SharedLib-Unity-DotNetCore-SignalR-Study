@@ -93,7 +93,7 @@ namespace Graphene.SharedModels.Network
 
         public override string ToString()
         {
-            return $"user: {userName}, ids: {connectionId.Count}, character: {SelectedCharacter}";
+            return $"user: {userName}, ids: {connectionId.Count}, character: {SelectedCharacter} - {Status}";
         }
     }
 }
