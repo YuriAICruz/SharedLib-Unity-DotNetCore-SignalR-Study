@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Graphene.SharedModels.Network
 {
@@ -9,24 +10,29 @@ namespace Graphene.SharedModels.Network
 
         private bool _changed;
 
-        public bool IsDirty => _changed;
+        public int SelectedCharacter { get; private set; }
 
-        public int SelectedCharacter { get; set; }
+        public NetworkClient(string userName, List<string> connectionId)
+        {
+            this.userName = userName;
+            this.connectionId = connectionId;
+        }        
+        
+        public NetworkClient(string userName, List<string> connectionId, int selectedCharacter)
+        {
+            this.userName = userName;
+            this.connectionId = connectionId;
+            SelectedCharacter = selectedCharacter;
+        }
 
         public int GetCount()
         {
             return connectionId.Count;
         }
 
-        public NetworkClient()
+        public bool IsDirty()
         {
-            
-        }
-
-        public NetworkClient(string userName, List<string> connectionId)
-        {
-            this.userName = userName;
-            this.connectionId = connectionId;
+            return _changed;
         }
 
         public void Remove(string id)
